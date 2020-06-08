@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% for i in data2 %}
+		{% if i in range(0, 40) %}
+			<h1>VALID AGE</h1>
+		{% else %}
+			<h3>INVALID AGE !!! please correct it...</h3>
+		{% endif %}
+	{% endfor %}
+
+	{% for d in data.items() %}
+		{% if d[0] == 'Age' or d[0]=='Sex' or d[0] == 'Name of Hospital ' or d[0]=='DATE OF COLLECT SAMPLE'%}
+			<p><h2><i>{{ d | safe }}</i></h2></p>
+		{% endif %}
+	{% endfor %}
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+
+<html> 
+<head> 
+	<title>isValid ??</title> 
+</head> 
+
+<style type="text/css"> 
+	
+	th:tr{ 
+		color: blue; 
+
+	} 
+	tr:nth-of-type(2n){ 
+		border: 1px solid black; 
+		background-color: rgba(150, 150, 150, 0.5); 
+
+	} 
+
+	td{ 
+		padding: 8px 8px; 
+		border: 1px solid black; 
+	} 
+</style> 
+
+<body> 
+
+<table style="margin-left: 20px;"> 
+<!-- Table headers -->
+	<th> 
+		<tr style="color: red; ">	 
+		<td><b>Id</b></td> 
+		<td><strong>isValid(Age)</strong></td>
+		<td><strong>isValid(Sex)</strong></td> 
+		<td><strong>isValid(Name_Hospital)</strong></td>
+		<td><strong>isValid(Date)</strong></td> 
+</tr> 
+	</th> 
+
+{%for i in range(0, len)%} 
+
+<!-- table rows -->
+<tr> 
+	<td>{{i+1}}</td>
+
+	<!-- Validation Check for Age -->
+	{% if data7[i] in range(0, 40) %} 
+		<td><b>{{data7[i]}}  Valid Age</b> </td> 
+	{% else %}
+		<td>{{data7[i]}}  <i>Invalid Age</i> </td> 
+	{% endif %}
+
+	<!-- Validation Check for Sex -->
+	{% if data8[i] == 'M' or data8[i] == 'F' %}
+		<td><b>{{data8[i]}}  Valid Sex</b> </td> 
+	{% else %}
+		<td>{{data8[i]}}  <i>Invalid Sex</i> </td>
+	{% endif %} 
+
+	<!-- Validation Check for Hospitals -->
+	{% if data9[i] in Hospital %}
+		<td><b>{{data9[i]}}  Valid Hospital</b> </td> 
+	{% else %}
+		<td>{{data9[i]}}  <i>Invalid Hospital</i> </td>
+	{% endif %} 
+
+	<!-- Validation Check for Date -->
+	{% if data10[i] == True %}
+		<td><b>{{data10_2[i]}}  Valid Date</b> </td> 
+	{% else %}
+		<td>{{data10_2[i]}}  <i>Invalid Date</i> </td>
+	{% endif %} 
+
+{%endfor%} 
+
+</tr> 
+
+</table> 
+
+
+</body> 
+</html> 
